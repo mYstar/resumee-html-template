@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Montserrat:wght@300;500;600&display=swap');
+@import 'nerd-fonts-generated.css';
+
+$highlight: #338078;
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: #EEE;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: 
+    "header main"
+    "side main";
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: min-content 1fr;
+
+  max-width: 1080px;
+  margin: 0 auto;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 19px;
+
+  background-color: #FFF;
+  box-shadow: 0 3px 10px rgb(0,0,0,0.2);
+
+  @media print {
+    box-shadow: none;
+  }
+
+  > div {
+    padding: 0 2rem;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+.heading-font {
+  font-family: 'EB Garamond', serif;
+}
+
+h1 {
+  @extend .heading-font;
+  font-weight: 500;
+  margin: 3rem 0 0.3rem 0;
+  font-size: 32px;
+}
+
+h2 {
+  @extend .heading-font;
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  margin: 2rem 0 0 0;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: $highlight;
+}
+
+#general-info {
+  grid-area: header;
+
+  padding-bottom: 1rem;
+
+  font-size: 20px;
+  background-color: $highlight;
+  color: white;
+
+  > h2 {
+    margin: 0;
+  }
+
+  > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem 0 1rem 0;
+
+    font-weight: 500;
+    font-size: 18px;
+
+    > li {
+      margin: 8px 0;
+
+      > i {
+        padding-right: 10px;
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+#career {
+  grid-area: main;
+
+  @media print {
+    font-size: 17px;
+  }
+
+  .date,.location {
+    display: inline-block;
+    width: 49%;
+
+    font-size: 18px;
+
+    i {
+      font-size: 25px;
+      color: #555;
+      margin-right: 0.5rem;
+    }
+  }
+
+  @media print {
+    .date {
+      width: 70%;
+      font-size: 17px;
+    }
+
+    .location {
+      width: 20%;
+      font-size: 17px;
+    }
+  }
+
+  > ul {
+    list-style-type: none;
+
+    text-indent: -1.1rem;
+  }
+
+  @media print {
+    .print-newpage {
+      margin-top: 10rem;
+    }
+  }
+}
+
+#side {
+  grid-area: side;
+  background-color: lighten(black, 98%);
+
+  i {
+    font-size: 25px;
+    color: #555;
+    margin-right: 0.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin: 0.3rem 0;
+    }
+  }
+
+  .highlight {
+    color: $highlight;
+    font-weight: 500;
+  }
+}
+
