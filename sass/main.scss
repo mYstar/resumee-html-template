@@ -10,6 +10,14 @@ body {
   background-color: #EEE;
 }
 
+.print-only {
+  display: none;
+
+  @media print {
+    display: inline;
+  }
+}
+
 .container {
   display: grid;
   grid-template-areas: 
